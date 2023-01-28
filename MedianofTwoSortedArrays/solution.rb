@@ -27,7 +27,7 @@
 #
 # The median is (2 + 3)/2 = 2.5
 
-
+
 # The key the to find the kth number in two sorted array.
 
 # kth([3,4,6,9],[1,5,7,10,15],7) => [3, 3] meaning that if we split
@@ -99,6 +99,12 @@
 # @param {Integer[]} nums1
 # @param {Integer[]} nums2
 # @return {Float}
+
+# 1. First, we make sure that nums1 is the shorter array.
+# 2. Then, we find the median of the shorter array, and use binary search to find the corresponding element in the longer array.
+# 3. If the element is found, we return the median.
+# 4. If the element is not found, we find the next few elements in both arrays, and return the median.
+
 def find_median_sorted_arrays(nums1, nums2)
   m, n = nums1.size, nums2.size
   return find_median_sorted_arrays(nums2, nums1) if m > n
