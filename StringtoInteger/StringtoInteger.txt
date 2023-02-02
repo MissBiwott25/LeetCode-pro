@@ -1,0 +1,16 @@
+Approach
+Idea:
+
+The main idea is to iterate the string until we get the first digit part of the string or we traversed the whole string
+(i.e index goes out of bound).
+
+So, first, we traverse and ignore leading whitespace’s then check for positive or negative signs
+if no sign character is present in the string then by default we take the digit is positive.
+
+And finally, we traverse until our character is in the range of int and we will end our loop when we get a character
+other than digit or digit goes beyond the Integer range.
+
+Remember if digit >=INT_MAX then we return INT_MAX or if digit <=INT_MIN then we return INT_MIN.
+
+Complexity Analysis for String to Integer (atoi) LeetCode Solution
+Time complexity: O(N) because we are traversing each character in the input at most once and for each character we spend a constant amount of time.
