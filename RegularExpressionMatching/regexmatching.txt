@@ -18,11 +18,11 @@ To understand the approach, let’s take some examples —
 
 s = "aa" and p = "aa", since all the character in both s and p are same, hence it’s a match.
 
-Now, what about s = "aabb" and p = "aab*" 🤔? We know that substrings bb and b* are match because * can be replaced by one b. Since, we already know that remaining substrings aa and aa are match, hence the whole strings also a match.
+Now, what about s = "aabb" and p = "aab*" ? We know that substrings bb and b* are match because * can be replaced by one b. Since, we already know that remaining substrings aa and aa are match, hence the whole strings also a match.
 
 What can we infer from this? Right, if we have solution of part of a problem, we can use that partial result and can go forward. Also, we can use the already calculated result without calculating it again.
 
-Does this ring a bell 🔔? Yes, this problem satisfies the following two properties -
+This problem satisfies the following two properties -
 
 Optimal Substructure — Any problem has optimal substructure property if its overall optimal solution can be constructed from the optimal solutions of its subproblems.
 
