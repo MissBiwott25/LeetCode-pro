@@ -1,0 +1,40 @@
+Analysis
+
+We are given two strings —
+
+s → which we need to match
+p → which has the pattern
+There can be two special characters —
+
+* → This can match 0 or more characters right before it. For e.g. if s = aa and p = a*, then * in p can match 0 or more a (because a is right before *).
+Thus, we can have one a in place of *, and we are left with only one a in both s and p, which is same. Hence, s and p are a match.
+
+. → This can match any single character. For e.g., if s = ab and p = .*, then since, . is right before * which means * can be replaced by ..
+This makes p = .. which means there can be any two characters. These “any two characters” can be a and b, hence, it’s a match.
+
+Approach
+
+To understand the approach, let’s take some examples —
+
+s = "aa" and p = "aa", since all the character in both s and p are same, hence it’s a match.
+
+Now, what about s = "aabb" and p = "aab*" 🤔? We know that substrings bb and b* are match because * can be replaced by one b. Since, we already know that remaining substrings aa and aa are match, hence the whole strings also a match.
+
+What can we infer from this? Right, if we have solution of part of a problem, we can use that partial result and can go forward. Also, we can use the already calculated result without calculating it again.
+
+Does this ring a bell 🔔? Yes, this problem satisfies the following two properties -
+
+Optimal Substructure — Any problem has optimal substructure property if its overall optimal solution can be constructed from the optimal solutions of its subproblems.
+
+Overlapping Subproblems — Any problem has overlapping sub-problems if finding its solution involves solving the same subproblem multiple times.
+It is now evident that we can use good old Dynamic Programming to solve this problem.
+
+Time Complexity
+Since we are dealing with each character of both s and p the time complexity will be O(m × n) where m and n are the lengths of s and p respectively.
+
+Space Complexity
+We need a DP array for our intermediate operations of dimensions m × n, hence the space complexity will also be O(m × n).
+
+
+
+
